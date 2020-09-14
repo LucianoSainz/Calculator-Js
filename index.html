@@ -1,72 +1,86 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <title>Calculator</title>
-  </head>
-  <body>
-        
-     <div class="container">
-     <div class="row text-center mt-5 mb-5">
-       <div class="col">
-       <h1>Calculator-js</h1>
-     </div>
-     </div>
-          
-      <div class="row justify-content-md-center mb-3">
-        <div class="col-3">
-           <div id="display" class="bg-dark text-center text-white py-3">0</div>
-         </div>
-       </div>
-          
-        <div class="row justify-content-md-center mb-2">
-          <a id="seven" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(7)">7</a>
-          <a id="eight" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(8)">8</a>
-          <a id="nine" class="btn btn-primary btn-lg mr-2 text-white"  onclick="updateDisplay(9)">9</a>
-          <a id="divide" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('divide')">/</a>
-        </div>
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-        <div class="row justify-content-center mb-2">
-          <a id="four" class="btn  btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(4)">4</a>
-          <a id="five" class="btn  btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(5)">5</a>
-          <a id="six" class="btn  btn-primary btn-lg mr-2 text-white"  onclick="updateDisplay(6)">6</a>
-          <a id="multiply" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('multiply')">*</a>
-        </div>
-        
-        <div class="row justify-content-center mb-2">
-          <a id="one" class="btn btn-primary btn-lg mr-2 text-white"   onclick="updateDisplay(1)">1</a>
-          <a id="two" class="btn btn-primary btn-lg mr-2 text-white"   onclick="updateDisplay(2)">2</a>
-          <a id="three" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(3)">3</a>
-          <a id="subtract" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('subtract')">-</a>
-        </div>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+    integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+  <title>Calculator</title>
+</head>
 
-        <div class="row justify-content-center mb-2">
-          <a id="zero" class="btn btn-primary btn-lg mr-2 text-white"  onclick="updateDisplay(0)">0</a>
-          <a id="decimal" class="btn btn-secondary btn-lg mr-2 text-white" onclick="updateDisplay('decimal')">.</a>
-          <a id="add" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('add')">+</a>
-        </div>
-          
-          
-        <div class="row justify-content-center mb-2">
-          <a id="clear" class="btn btn-warning btn-lg mr-2" onclick="clearDisplay()">clear</a>
-          <a id="equals" class="btn col col-sm-2 btn-secondary mr-2 text-white" onclick="updateDisplay('equals')">=</a>
-        </div>
+<body>
 
-          
-</div>
-    
-    <!-- Optional JavaScript -->
-    <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
-    <script src="./js/main.js"></script>
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
-    
+  <div class="container">
+    <div class="row text-center mt-5 mb-5">
+      <div class="col">
+        <h1>Calculator-js</h1>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-3">
+      <div class="col-lg-4 col-sm-6">
+        <div id="display" class="bg-dark text-center text-white py-3">0</div>
+      </div>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <a id="seven" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(7)">7</a>
+      <a id="eight" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(8)">8</a>
+      <a id="nine" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(9)">9</a>
+      <a id="divide" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('divide')">/</a>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <a id="four" class="btn  btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(4)">4</a>
+      <a id="five" class="btn  btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(5)">5</a>
+      <a id="six" class="btn  btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(6)">6</a>
+      <a id="multiply" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('multiply')">*</a>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <a id="one" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(1)">1</a>
+      <a id="two" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(2)">2</a>
+      <a id="three" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(3)">3</a>
+      <a id="subtract" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('subtract')">-</a>
+    </div>
+
+    <div class="row justify-content-center mb-2">
+      <a id="zero" class="btn btn-primary btn-lg mr-2 text-white" onclick="updateDisplay(0)">0</a>
+      <a id="negative-value" class="btn btn-primary btn-lg mr-2 text-white"
+        onclick="updateDisplay('negative-value')">-/+</a>
+      <a id="decimal" class="btn btn-secondary btn-lg mr-2 text-white" onclick="updateDisplay('decimal')">.</a>
+      <a id="add" class="btn btn-secondary btn-lg text-white" onclick="updateDisplay('add')">+</a>
+    </div>
+
+
+    <div class="row justify-content-center mb-2">
+      <a id="clear" class="btn btn-warning btn-lg mr-2" onclick="clearDisplay()">C</a>
+      <a id="equals" class="btn col col-sm-2 btn-secondary mr-2 text-white" onclick="updateDisplay('equals')">=</a>
+    </div>
+
+    <footer class="create bg-dark fixed-bottom pt-3 text-center text-white">
+      <p>Create by LucianoSainz for freeCodeCamp</p>
+   </footer>
+  </div>
+
+  <!-- Optional JavaScript -->
+  <script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+  <script src="./js/main.js"></script>
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+    integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+    integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+    integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+    crossorigin="anonymous"></script>
+
 </body>
+
 </html>
